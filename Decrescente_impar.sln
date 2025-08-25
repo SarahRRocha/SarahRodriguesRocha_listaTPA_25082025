@@ -1,6 +1,6 @@
 using System;
 
-namespace Decrescente_impar
+namespace Decrescente impar
 {
     internal class Program
     {
