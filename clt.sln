@@ -1,25 +1,43 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clt", "clt\clt.csproj", "{EA84340D-E0E4-4558-B4DD-EB50E13E33BA}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA84340D-E0E4-4558-B4DD-EB50E13E33BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA84340D-E0E4-4558-B4DD-EB50E13E33BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA84340D-E0E4-4558-B4DD-EB50E13E33BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA84340D-E0E4-4558-B4DD-EB50E13E33BA}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {07B372BA-8AE2-4161-9134-5104A20D83AC}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace SalarioOperario
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int cd, hr, slmin, plussl;
+            plussl = 0;
+
+            string resposta;
+
+            do
+            {
+                Console.Write("Digite o código do operário: ");
+                cd = int.Parse(Console.ReadLine());
+
+                Console.Write("Digite o número de horas trabalhadas: ");
+                hr = int.Parse(Console.ReadLine());
+
+                if (hr > 50)
+                {
+                    plussl= hr - 50;
+                    slmin = 50 * 10 + plussl * 20;
+                }
+                else
+                {
+                    slmin = hr * 10;
+                }
+
+                int salarioExcedente = plussl * 20;
+
+                Console.WriteLine($"\nSalário total do operário {cd}: R$ {slmin}");
+                Console.WriteLine($"Salário excedente: R$ {salarioExcedente}\n");
+
+                Console.Write("Deseja encerrar o programa? (S - sim/N - não): ");
+                resposta = Console.ReadLine().ToUpper();
+
+            } while (resposta != "S");
+        }
+    }
+}
