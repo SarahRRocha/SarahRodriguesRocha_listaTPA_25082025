@@ -1,6 +1,6 @@
 using System;
 
-namespace MaiorNumero
+namespace Maior número 
 {
     internal class Program
     {
