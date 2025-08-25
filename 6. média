@@ -23,7 +23,7 @@ namespace MediaNotas
                 }
                 else
                 {
-                    Console.WriteLine("Nota inválida! Digite novamente.");
+                    Console.WriteLine("Nota inválida!.");
                 }
             }
 
