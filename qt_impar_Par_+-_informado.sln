@@ -1,25 +1,46 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qt_impar_Par_+-_informado", "qt_impar_Par_+-_informado\qt_impar_Par_+-_informado.csproj", "{7F857B45-7ADA-4F28-909B-CCE6EE830E56}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F857B45-7ADA-4F28-909B-CCE6EE830E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F857B45-7ADA-4F28-909B-CCE6EE830E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F857B45-7ADA-4F28-909B-CCE6EE830E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F857B45-7ADA-4F28-909B-CCE6EE830E56}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {75362D15-5B59-4F52-9FC7-3ECFE0202034}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace ContagemNumeros
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int par, impar, positivo, negativo, num;
+            par = 0;
+            impar = 0;
+            positivo = 0;
+            negativo = 0;
+
+            string resposta;
+
+            while (true)
+            {
+                Console.Write("Digite número: ");
+                num = int.Parse(Console.ReadLine());
+
+                if (num % 2 == 0)
+                    par++;
+                else
+                    impar++;
+
+                if (num >= 0)
+                    positivo++;
+                else
+                    negativo++;
+
+                Console.Write("Deseja encerrar o programa? (S - para sim /N - para não): ");
+                resposta = Console.ReadLine().ToUpper();
+
+                if (resposta == "S")
+                    break;
+            }
+
+            Console.WriteLine("\n--- RESULTADOS ---");
+            Console.WriteLine($"Quantidade de pares: {par}");
+            Console.WriteLine($"Quantidade de ímpares: {impar}");
+            Console.WriteLine($"Quantidade de positivos: {positivo}");
+            Console.WriteLine($"Quantidade de negativos: {negativo}");
+        }
+    }
+}
