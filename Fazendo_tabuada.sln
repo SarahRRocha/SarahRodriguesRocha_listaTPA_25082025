@@ -1,25 +1,21 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fazendo_tabuada", "Fazendo_tabuada\Fazendo_tabuada.csproj", "{C9D4F95B-537D-4AF1-99AD-A3192AF73E96}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C9D4F95B-537D-4AF1-99AD-A3192AF73E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9D4F95B-537D-4AF1-99AD-A3192AF73E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9D4F95B-537D-4AF1-99AD-A3192AF73E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9D4F95B-537D-4AF1-99AD-A3192AF73E96}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D16EEC74-8A0E-4E22-AF0E-E579EDD3988E}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace Tabuada
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b;
+            Console.WriteLine("Digite um número para fazermso a tabuada: ");
+            a = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"\nTabuada do {a}:");
+
+            for (b = 0; b <= 10; b++)
+            {
+                Console.WriteLine($"{a} x {b} = {a * b}");
+            }
+        }
+    }
+}
